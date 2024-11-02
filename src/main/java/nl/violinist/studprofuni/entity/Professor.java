@@ -1,11 +1,8 @@
 package nl.violinist.studprofuni.entity;
 
-import nl.violinist.studprofuni.service.GradingReport;
-import nl.violinist.studprofuni.service.PersonIdentificator;
-
-public class Professor implements PersonIdentificator, GradingReport {
+public class Professor implements CommonAction, ProfessorAction {
     private String name;
-    private int id;
+    private String subject;
     private University university;
     private Student student;
 
@@ -13,40 +10,34 @@ public class Professor implements PersonIdentificator, GradingReport {
 
     }
 
-    public Professor(String name, int id, University university, Student student) {
+    public Professor(String name, String subject, University university, Student student) {
         this.name = name;
-        this.id = id;
+        this.subject = subject;
         this.university = university;
         this.student = student;
     }
 
-    @Override
     public String getName() {
         return name;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
     }
 
-    @Override
-    public int getId() {
-        return id;
+    public String getSubject() {
+        return subject;
     }
 
-    @Override
-    public void setId(int id) {
-        this.id = id;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    @Override
     public University getUniversity() {
         return university;
     }
 
-    @Override
-    public void setUniversity(University university) {
+    public void setUniversity() {
         this.university = university;
     }
 
@@ -56,5 +47,21 @@ public class Professor implements PersonIdentificator, GradingReport {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    @Override
+    public void givingLectures() {
+        System.out.println("Professor checks the report on " + subject +
+                " of " + getStudent().getName() + ".");
+    }
+
+    @Override
+    public void gradingReports() {
+        System.out.println("Professor gives A to all the students of group " + getStudent().getGroup() + ", who attended the lecture.");
+    }
+
+    @Override
+    public void goingToCanteen() {
+        System.out.println("Professor " + getName() + " goes to drink a cup of coffee in the canteen with his colleagues.");
     }
 }

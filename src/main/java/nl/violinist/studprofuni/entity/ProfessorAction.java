@@ -1,5 +1,8 @@
-package nl.violinist.studprofuni.service;
+package nl.violinist.studprofuni.entity;
 
-public interface GradingReport {
+public interface ProfessorAction {
 
+    void givingLectures();
+
+    void gradingReports();
 }

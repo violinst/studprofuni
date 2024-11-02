@@ -1,26 +1,23 @@
 package nl.violinist.studprofuni.entity;
 
 public class University {
-    private String name;
+    private String uniName;
     private Student student;
     private Professor professor;
 
     public University() {
-
     }
 
-    public University(String name, Student student, Professor professor) {
-        this.name = name;
-        this.student = student;
-        this.professor = professor;
+    public University(String uniName) {
+        this.uniName = uniName;
     }
 
-    public String getName() {
-        return name;
+    public String getUniName() {
+        return uniName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUniName(String uniName) {
+        this.uniName = uniName;
     }
 
     public Student getStudent() {
@@ -38,5 +35,4 @@ public class University {
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
-
 }

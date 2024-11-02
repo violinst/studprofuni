@@ -1,5 +1,8 @@
-package nl.violinist.studprofuni.service;
+package nl.violinist.studprofuni.entity;
 
-public interface SubmittingReport {
+public interface StudentAction {
 
+    void attendingLectures();
+
+    void makingReport();
 }

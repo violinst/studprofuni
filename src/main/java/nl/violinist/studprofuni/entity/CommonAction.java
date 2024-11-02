@@ -1,8 +1,7 @@
 package nl.violinist.studprofuni.entity;
 
-public interface PersonIdentificating {
+public interface CommonAction {
 
-    University getUniversity();
-
-    void setUniversity();
+    void goingToCanteen();
 }
+
