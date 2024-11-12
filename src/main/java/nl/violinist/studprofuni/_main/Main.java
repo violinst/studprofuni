@@ -3,6 +3,9 @@ package nl.violinist.studprofuni._main;
 import nl.violinist.studprofuni.entity.Professor;
 import nl.violinist.studprofuni.entity.Student;
 import nl.violinist.studprofuni.entity.University;
+import nl.violinist.studprofuni.service.CommonService;
+import nl.violinist.studprofuni.service.ProfessorService;
+import nl.violinist.studprofuni.service.StudentService;
 
 public class Main {
 
@@ -19,11 +22,15 @@ public class Main {
         student1 = new Student("Brian Connor", 3,
                 university1, professor1);
 
-        student1.attendingLectures();
-        student1.makingReport();
-        professor1.givingLectures();
-        professor1.gradingReports();
-        professor1.goingToCanteen();
-        student1.goingToCanteen();
+        StudentService studentService = new StudentService();
+        ProfessorService professorService = new ProfessorService();
+        CommonService commonService = new CommonService();
+
+        studentService.makeAttendingLectures(student1);
+        studentService.makeMakingReport(student1);
+        professorService.makeGivingLectures(professor1);
+        professorService.makeGradingReport(professor1);
+        commonService.makeGoingToCanteen(student1);
+        commonService.makeGoingToCanteen(professor1);
     }
 }

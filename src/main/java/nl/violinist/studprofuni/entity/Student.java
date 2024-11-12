@@ -58,7 +58,7 @@ public class Student implements CommonAction, StudentAction {
 
     @Override
     public void makingReport() {
-        System.out.println("Student " + name + " writes a report about"
+        System.out.println("Student " + name + " writes a report about "
                 + getProfessor().getSubject() + " lecture of " + " professor " + professor.getName() + ".");
     }
 
